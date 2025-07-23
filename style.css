@@ -19,6 +19,17 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.burger{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-toggle{
+    display: none;
+}
+
 .nav-links{
     display: flex;
     position: absolute;
@@ -40,6 +51,29 @@ body{
     color:#00aaff;
 }
 
+@media (max-width:768px){
+    .burger{
+        display: block;
+    }
+    .nav-links{
+        position:fixed;
+        top: 60px;
+        left: -100%;
+        width: 300px;
+        height: 218px;
+        align-items: center;
+        flex-direction: column;
+        background-color: #0f2027;
+        transition: left 0.3s ease;
+    }
+    #menu-toggle:checked+ .burger+.nav-links{
+        left: 0;
+    }
+    .nav-links li a{
+        padding: 20px;
+        border-bottom: 1px solid #0f2027;
+    }
+}
 .logo{
     color:#00aaff;
     font-size: 24px;
